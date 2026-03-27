@@ -1,16 +1,16 @@
 import Folders from '../features/Mail/ui/Folders'
 import InboxView from '../features/Mail/ui/InboxView'
 import MessageView from '../features/Mail/ui/MessageView'
-import MailHeader from '../features/Mail/ui/MailHeader';
+import MailHeader from '../features/Mail/ui/MailHeader'
 
 const MailPage = () => {
   return (
     <>
-      <MailHeader/>
+      <MailHeader />
       <div className="flex">
         <Folders />
-        <InboxView/>
-        <MessageView/>
+        <InboxView />
+        <MessageView />
       </div>
     </>
   )
