@@ -6,6 +6,7 @@ export type Email = {
   Author: string
   subject: string
   description: string
+  readed: boolean
 }
 export type Folder = {
   icon: IconDefinition

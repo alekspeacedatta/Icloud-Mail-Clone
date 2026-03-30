@@ -4,8 +4,13 @@ import InboxList from './InboxList'
 import { faSearch, faTableList } from '@fortawesome/free-solid-svg-icons'
 import { useUiStore } from '../store/useUiStore'
 import { faWindowRestore } from '@fortawesome/free-regular-svg-icons'
+import { useInboxStore } from '../store/useInboxListStore'
 
 const InboxView = () => {
+
+  const toggleFiltered = useInboxStore((state) => state.toggleFiltered);
+  const isFiltered = useInboxStore((state) => state.isFiltered);
+
   const visibility = useUiStore((state) => state.isVisiable)
   const setVisibility = useUiStore((state) => state.setVisibility)
 
@@ -66,15 +71,18 @@ const InboxView = () => {
           </p>
         </div>
         <button
+          onClick={toggleFiltered}
           title="Filter"
-          className="hover:bg-[#35353a] rounded-lg px-1.5 py-0.75 cursor-pointer text-blue-500 text-sm"
+          className={`
+            ${ isFiltered && 'focus:bg-blue-500 focus:text-white' }
+            hover:bg-[#35353a] rounded-lg px-1.5 py-0.75 cursor-pointer text-blue-500  text-sm`}
         >
           <FontAwesomeIcon icon={faTableList} />
         </button>
       </div>
-      <div className="overflow-y-auto gap-1 mt-5 flex-1 min-h-0 px-3.5 scrollbar scrollbar-thumb-[#9f9f9f] scrollbar-thumb-rounded-full scrollbar-track-[#2c2c2c]  ">
+      <ul className="overflow-y-auto gap-1 mt-5 flex-1 min-h-0 px-3.5 scrollbar scrollbar-thumb-[#9f9f9f] scrollbar-thumb-rounded-full scrollbar-track-[#2c2c2c]  ">
         <InboxList />
-      </div>
+      </ul>
     </div>
   )
 }

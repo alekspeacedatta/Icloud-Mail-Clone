@@ -13,7 +13,7 @@ type MailStoreStates = {
 
 export const useMailStore = create<MailStoreStates>((set) => ({
   email: null,
-  selectedTab: 'Incomes',
+  selectedTab: 'Inbox',
   emailsQuantity: 0,
   clearEmail: () => {
     set({ email: null })
