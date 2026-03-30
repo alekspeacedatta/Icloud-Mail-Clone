@@ -2,3 +2,16 @@
 @plugin "tailwind-scrollbar" {
   nocompatible: true;
 }
+
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

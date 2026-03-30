@@ -5,14 +5,14 @@ import MailHeader from '../features/Mail/ui/MailHeader'
 
 const MailPage = () => {
   return (
-    <>
+    <div>
       <MailHeader />
-      <div className="flex">
+      <div className="flex h-[calc(100dvh-44px)]">
         <Folders />
         <InboxView />
         <MessageView />
       </div>
-    </>
+    </div>
   )
 }
 
