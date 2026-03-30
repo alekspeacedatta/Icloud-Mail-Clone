@@ -32,9 +32,9 @@ const EmailToolBar = () => {
         {iconButtons.map((btn, index) => (
           <button
             className="
-                        group enabled:hover:bg-[#35353a]
-                        rounded-lg px-1.5 py-1 enabled:cursor-pointer
-                        "
+                group enabled:hover:bg-[#35353a]
+                rounded-lg px-1.5 py-1 enabled:cursor-pointer
+            "
             onClick={btn.action}
             title={btn.label}
             key={index}
